@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>OCR App</title>
+    <!-- Cropper -->
+    <link href="cropper.min.css" rel="stylesheet">
+    <script src="cropper.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <meta name="theme-color" content="#7952b3">
+
+</head>
+
+<body>
+
+    <main>
+        <div id="displays">
+            <div>
+                <img id="image" src="script.jpg">
+            </div>
+
+            <div class="camera">
+                <!--   -->
+                <video id="video" autoplay>Video stream not available.</video>
+                <canvas id="canvas">
+                </canvas>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <div id="captures" class="container-fluid p-3">
+            <div class="row">
+                <div class="col-md-10">
+                    <img id="photo" class="w-100 h-100 border" alt="Bootstrap Themes" loading="lazy">
+                </div>
+                <div class="col-md-2 text-center">
+                    <button id="capBtn" type="button" class="btn btn-dark" style="margin: 5px 0px 5px 0px">
+                        Começar captura da tela</button>
+                    <button id="photoBtn" type="button" class="btn btn-dark" style="margin: 5px 0px 5px 0px">
+                        Começar captura da câmera</button>
+                    <button id="stopCapBtn" type="button" class="btn btn-dark d-none" style="margin: 5px 0px 5px 0px">
+                        Parar captura</button>
+                    <button id="stillBtn" type="button" class="btn btn-dark d-none" style="margin: 5px 0px 5px 0px">
+                        Capturar imagem</button>
+                    <button id="enhaBtn" type="button" class="btn btn-dark" style="margin: 5px 0px 5px 0px">
+                        Avançar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="enhance" class="container-fluid p-3">
+            <div class="row">
+                <div class="col-md-10">
+                    <img id="enhaphoto" src="script.jpg" class="w-100 h-100 border" alt="Bootstrap Themes"
+                        loading="lazy">
+                </div>
+                <div class="col-md-2">
+                    <button id="cropBtn" type="button" class="btn btn-dark" style="margin: 5px 0px 5px 0px">
+                        Recortar imagem</button>
+                    <button id="bwBtn" type="button" class="btn btn-dark" style="margin: 5px 0px 5px 0px">
+                        Preto e branco</button>
+                    <button id="finalBtn" type="button" class="btn btn-dark" style="margin: 5px 0px 5px 0px">
+                        Avançar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="cropper" class="container-fluid p-3">
+            <div class="row">
+                <button id="voltaBtn" type="button" class="btn btn-dark" style="margin: 5px 0px 5px 0px">
+                    voltar</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img id="crophoto" src="script.jpg" class="w-100 h-100 border" alt="Bootstrap Themes"
+                        loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <div id="ocr" class="container-fluid p-3">
+            <div class="progress invisible">
+                <div id="prog" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100">0%</div>
+            </div>
+
+            <div class="b-example-divider"></div>
+            <div class="row">
+                <button id="ocrBtn" type="button" class="btn btn-dark" style="margin: 5px 0px 5px 0px">
+                    Reconhecer caracteres</button>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="finalphoto" class="w-100 h-100 border" alt="Bootstrap Themes" loading="lazy">
+                </div>
+                <div class="col-md-6" style="height: 500px">
+                    <div class="input-group mb-3 h-100">
+                        <textarea id="txtOutput" class="form-control" style="resize: none" id="Textarea1"
+                            rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/tesseract.js@2.0.0/dist/tesseract.min.js"
+        integrity="sha384-MTEb82ufpBJ2VCTmPZlD/+vgiT5z6zmOwqU/uDO9IobYm9xCOUEN0WH3czf6ppl8"
+        crossorigin="anonymous"></script>
+    <!-- local lib <script src="tesseract.min.js"></script> -->
+    <script src="app.js"></script>
+</body>
+
+</html>
